@@ -1,8 +1,14 @@
 import React from 'react'
 
-function Nav({cart,setCart}) {
-  return <>
-       <nav className="navbar navbar-expand-lg navbar-light bg-light">
+
+function Nav({ cart, setCart }) {
+
+    let handleClick = () => {
+        window.location.reload()
+    }
+
+    return <>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container px-4 px-lg-5">
                 <a className="navbar-brand" href="#!">Start Bootstrap</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
@@ -21,7 +27,7 @@ function Nav({cart,setCart}) {
                         </li>
                     </ul>
                     <form className="d-flex">
-                        <button className="btn btn-outline-dark" onClick={()=>setCart(0)}>
+                        <button className="btn btn-outline-dark" onClick={() => { handleClick() }}>
                             <i className="bi-cart-fill me-1"></i>
                             Cart
                             <span className="badge bg-dark text-white ms-1 rounded-pill">{cart}</span>
@@ -30,7 +36,7 @@ function Nav({cart,setCart}) {
                 </div>
             </div>
         </nav>
-  </>
+    </>
 }
 
 export default Nav
